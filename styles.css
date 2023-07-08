@@ -1,0 +1,108 @@
+:root {
+    --veryDarkDesaturatedBlue: hsl(229, 23%, 23%);
+    --darkGrayishBlue: hsl(227, 10%, 46%);
+    --darkCyan: hsl(185, 75%, 39%);
+
+    --darkGray: hsl(0, 0%, 59%);
+
+    --darkGrayT: hsla(0, 0%, 59%, 0.3);
+    --white: hsl(0, 0%, 100%);
+
+    --wdh: 695px;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-position: calc(50% - var(--wdh)/2) calc(50% - var(--wdh)/2), calc(50% + var(--wdh)/2) calc(50% + var(--wdh)/2);
+    background-image: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
+    background-size: var(--wdh) var(--wdh);
+    background-color: var(--darkCyan);
+    background-repeat: no-repeat;
+    place-items: center;
+    min-height: 100vh;
+    display: grid;
+}
+main {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    height: 375px;
+    width: 326px;
+}
+.main_head {
+    border-bottom: 1px var(--darkGrayT) solid;
+    position: relative;
+    height: 286px;
+}
+.card_head {
+    background-image: url('images/bg-pattern-card.svg');
+    height:  141px;
+}
+img {
+    transform: translate(-50%, -50%);
+    border: 5px var(--white) solid;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+}
+.card_body {
+    padding: 75px 0 27px;
+    height: 145px;
+}
+h1 span {
+    color: var(--darkGrayishBlue);
+}
+.city {
+    font-size: 0.875rem;
+    line-height: 1.9;
+}
+span:not(.age) {
+    display: block;
+}
+.card_footer {
+    justify-content: center;
+    height: 89px;
+}
+.main_head, .card_head, .card_body, .card_footer {
+    width: 100%;
+}
+ul {
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    width: 80%;
+}
+.card_footer, ul {
+    display: flex;
+}
+li {
+    line-height: 1.45;
+    flex: 33.33%;
+}
+h1, li {
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--veryDarkDesaturatedBlue);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+.card_body, li {
+    text-align: center;
+}
+li span {
+    color: var(--darkGray);
+    letter-spacing: 0.1em;
+    font-size: 0.6875rem;
+}
+h1 span, li span {
+    font-weight: 400;
+}
+
+@media screen and (min-width: 750px) {
+    :root {
+        --wdh: 978px;
+    }
+}
